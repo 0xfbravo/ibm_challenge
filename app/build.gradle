@@ -42,6 +42,9 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:$junit_androidx_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
 
+    // Koin for Android - https://github.com/InsertKoinIO/koin
+    implementation "org.koin:koin-android:$koin_version"
+
     // RxKotlin - https://github.com/ReactiveX/RxKotlin
     implementation "io.reactivex.rxjava3:rxkotlin:$rx_version"
 
