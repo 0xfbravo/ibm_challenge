@@ -9,31 +9,36 @@ class ValidatePasswordTest {
     private var validatePassword = ValidatePassword()
 
     @Test
-    fun testPasswordFullPatternSuccess() {
-        assert(validatePassword.withParams("Abc123@").execute())
-        assert(validatePassword.withParams("Test@1").execute())
-        assert(validatePassword.withParams("Ding#Dong1").execute())
-        assert(validatePassword.withParams("Ab\$c123").execute())
-        assert(validatePassword.withParams("A!2").execute())
-        assert(validatePassword.withParams("C%3").execute())
-        assert(validatePassword.withParams("3*E").execute())
-        assert(validatePassword.withParams("Https2??").execute())
-        assert(validatePassword.withParams("D&D3").execute())
+    fun testPasswordWhenFullPattern_ShouldReturnSuccess() {
+        assertTrue(validatePassword.withParams("Abc123@").execute())
+        assertTrue(validatePassword.withParams("Test@1").execute())
+        assertTrue(validatePassword.withParams("Ding#Dong1").execute())
+        assertTrue(validatePassword.withParams("Ab\$c123").execute())
+        assertTrue(validatePassword.withParams("A!2").execute())
+        assertTrue(validatePassword.withParams("C%3").execute())
+        assertTrue(validatePassword.withParams("3*E").execute())
+        assertTrue(validatePassword.withParams("Https2??").execute())
+        assertTrue(validatePassword.withParams("D&D3").execute())
     }
 
     @Test
-    fun testPasswordMissingUppercaseError() {
-        assert(!validatePassword.withParams("abc123@").execute())
+    fun testPasswordWhenMissingUppercase_ShouldReturnError() {
+        assertFalse(validatePassword.withParams("abc123@").execute())
     }
 
     @Test
-    fun testPasswordMissingNumbersError() {
-        assert(!validatePassword.withParams("abc@").execute())
+    fun testPasswordWhenMissingNumbers_ShouldReturnError() {
+        assertFalse(validatePassword.withParams("abc@").execute())
     }
 
     @Test
-    fun testPasswordMissingSpecialCharError() {
-        assert(!validatePassword.withParams("abc123").execute())
+    fun testPasswordWhenMissingSpecialChar_ShouldReturnError() {
+        assertFalse(validatePassword.withParams("abc123").execute())
+    }
+
+    @Test
+    fun testPasswordWhenEmpty_ShouldReturnError() {
+        assertFalse(validatePassword.withParams("").execute())
     }
 
 }
