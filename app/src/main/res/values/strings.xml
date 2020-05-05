@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">IBM Challenge</string>
+    <string name="title_statement">BankStatement</string>
+    <string name="title_login">BankLogin</string>
+</resources>
