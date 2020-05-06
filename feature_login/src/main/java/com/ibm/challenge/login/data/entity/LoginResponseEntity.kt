@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName
 import com.ibm.challenge.data.entity.Entity
 import com.ibm.challenge.login.domain.model.LoginResponseDomain
 
-data class LoginResponse(@Expose @SerializedName("userAccount") val userAccount: UserAccount? = null,
-                         @Expose @SerializedName("error") val error: Error? = null): Entity<LoginResponseDomain>() {
+data class LoginResponseEntity(@Expose @SerializedName("userAccount") val userAccount: UserAccountEntity? = null,
+                               @Expose @SerializedName("error") val error: ErrorEntity? = null): Entity<LoginResponseDomain>() {
 
     override fun asDomainModel(): LoginResponseDomain {
         return LoginResponseDomain(userAccount?.asDomainModel(), error?.asDomainModel())

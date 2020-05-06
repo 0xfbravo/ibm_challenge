@@ -6,8 +6,8 @@ import com.ibm.challenge.data.entity.Entity
 import com.ibm.challenge.domain.model.DomainModel
 import com.ibm.challenge.login.domain.model.LoginResponseDomain
 
-data class LoginRequestBody(@Expose @SerializedName("user") val user: String,
-                            @Expose @SerializedName("password") val password: String): Entity<DomainModel>() {
+data class LoginRequestBodyEntity(@Expose @SerializedName("user") val user: String,
+                                  @Expose @SerializedName("password") val password: String): Entity<DomainModel>() {
 
     override fun asDomainModel(): DomainModel {
         TODO("Not yet implemented")
