@@ -12,7 +12,7 @@ class ValidatePassword: Interactor<Boolean>() {
     }
 
     fun withParams(password: String): ValidatePassword {
-        this.password = password
+        this.password = password.trim()
         return this
     }
 
