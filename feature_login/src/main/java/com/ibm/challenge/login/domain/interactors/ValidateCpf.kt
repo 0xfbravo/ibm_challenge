@@ -2,7 +2,7 @@ package com.ibm.challenge.login.domain.interactors
 
 import com.ibm.challenge.domain.interactos.Interactor
 
-class ValidateCPF: Interactor<Boolean>() {
+class ValidateCpf: Interactor<Boolean>() {
 
     private val cpfLength = 11
     private val notNumbersRegex = Regex("\\D")
@@ -66,7 +66,7 @@ class ValidateCPF: Interactor<Boolean>() {
         return false
     }
 
-    fun withParams(documentNumber: String): ValidateCPF {
+    fun withParams(documentNumber: String): ValidateCpf {
         this.cpf = documentNumber.trim()
         return this
     }
