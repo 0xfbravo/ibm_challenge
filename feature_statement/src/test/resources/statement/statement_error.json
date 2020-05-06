@@ -1,0 +1,7 @@
+{
+  "statementList": [],
+  "error": {
+    "code": 123,
+    "message": "O id de usuário é inválido"
+  }
+}
