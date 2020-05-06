@@ -10,7 +10,7 @@ import org.koin.dsl.module
 
 object FeatureLoginModule {
 
-    fun get() = module {
+    fun get() = module(override = true) {
         // Data
         single<LoginRemoteRepository> { LoginRemoteRepositoryImpl() }
 

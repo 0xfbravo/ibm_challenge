@@ -10,7 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".presentation.view.splashscreen.SplashScreenActivity">
+        <activity
+            android:name=".presentation.view.splashscreen.SplashScreenActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoTitleBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
