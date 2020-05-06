@@ -1,7 +1,6 @@
 package com.ibm.challenge.login.domain.interactors
 
 import com.ibm.challenge.domain.repository.LocalRepository
-import com.ibm.challenge.domain.repository.RemoteRepository
 import com.ibm.challenge.login.domain.exceptions.InvalidLoginException
 import com.ibm.challenge.login.domain.model.ErrorDomain
 import com.ibm.challenge.login.domain.model.LoginResponseDomain
@@ -10,11 +9,8 @@ import com.ibm.challenge.login.domain.repository.LoginRemoteRepository
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import io.reactivex.rxjava3.core.Single
-import org.junit.Assert.assertFalse
-import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
-import org.mockito.Mockito
 
 class PostLoginTest {
 
@@ -33,7 +29,7 @@ class PostLoginTest {
     )
 
     @Before
-    fun setUp() {
+    fun setup() {
         val validateCpf = ValidateCpf()
         val validateEmail = ValidateEmail()
         val validatePassword = ValidatePassword()

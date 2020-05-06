@@ -6,9 +6,9 @@ object LoginServicesFactory {
 
     private var loginServices: LoginServices? = null
 
-    fun getLoginServices(): LoginServices {
+    fun getLoginServices(baseUrl: String): LoginServices {
         if (loginServices == null) {
-            loginServices = RequestManager.provideRetrofit().create(LoginServices::class.java)
+            loginServices = RequestManager.provideRetrofit(baseUrl).create(LoginServices::class.java)
         }
 
         return loginServices!!

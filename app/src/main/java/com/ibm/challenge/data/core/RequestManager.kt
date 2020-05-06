@@ -50,7 +50,7 @@ object RequestManager {
             .create()
     }
 
-    fun provideRetrofit(baseUrl: String = this.baseUrl, isNullSerialized: Boolean = true): Retrofit {
+    fun provideRetrofit(baseUrl: String, isNullSerialized: Boolean = true): Retrofit {
         provideRxDefaultErrorHandler()
         return Retrofit.Builder()
             .baseUrl(baseUrl)
