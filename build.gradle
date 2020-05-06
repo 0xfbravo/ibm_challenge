@@ -19,6 +19,7 @@ buildscript {
 
         // Test Dependencies
         junit_version = '4.12'
+        mockito_version = '2.2.0'
         junit_androidx_version = '1.1.1'
         espresso_version = '3.2.0'
 

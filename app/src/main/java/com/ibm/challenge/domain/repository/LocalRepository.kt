@@ -1,6 +1,6 @@
 package com.ibm.challenge.domain.repository
 
-import com.ibm.challenge.domain.core.DomainModel
+import com.ibm.challenge.domain.model.DomainModel
 import org.joda.time.DateTime
 
 interface LocalRepository {
