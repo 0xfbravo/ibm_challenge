@@ -11,8 +11,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-internal object RequestManager {
+object RequestManager {
 
+    const val baseUrl = "https://bank-app-test.herokuapp.com/api/"
     private const val CONNECT_TIMEOUT = 20L
     private const val READ_TIMEOUT = 20L
     private const val WRITE_TIMEOUT = 20L
@@ -49,10 +50,10 @@ internal object RequestManager {
             .create()
     }
 
-    fun provideRetrofit(baseURL: String, isNullSerialized: Boolean = true): Retrofit {
+    fun provideRetrofit(baseUrl: String = this.baseUrl, isNullSerialized: Boolean = true): Retrofit {
         provideRxDefaultErrorHandler()
         return Retrofit.Builder()
-            .baseUrl(baseURL)
+            .baseUrl(baseUrl)
             .client(provideHttpClient())
             .addConverterFactory(GsonConverterFactory.create(getGSONInstance(isNullSerialized)))
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())

@@ -37,4 +37,8 @@ class PostLogin(private val localRepository: LocalRepository,
         return this
     }
 
+    companion object {
+        const val tag = "post_login"
+    }
+
 }
