@@ -17,7 +17,7 @@ class LoginRepositoryImpl(private val baseURL: String = RequestManager.baseUrl):
         return LoginServicesFactory
             .getLoginServices(baseURL)
             .postLogin(requestBody)
-            .doOnError { onRequestError(PostLogin.tag, it.localizedMessage) }
+            .doOnError { onRequestError(PostLogin.tag, it.localizedMessage!!) }
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
             .map { it.asDomainModel() }
