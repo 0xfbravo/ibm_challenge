@@ -10,7 +10,7 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.schedulers.Schedulers
 
-class LoginRepositoryImpl(private val baseURL: String = RequestManager.baseUrl): LoginRemoteRepository {
+class LoginRemoteRepositoryImpl(private val baseURL: String = RequestManager.baseUrl): LoginRemoteRepository {
 
     override fun postLogin(user: String, password: String): Single<LoginResponseDomain> {
         val requestBody = LoginRequestBody(user, password)

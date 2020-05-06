@@ -11,19 +11,8 @@ data class UserAccount(@Expose @SerializedName("userId") val userID: Long? = nul
                        @Expose @SerializedName("agency") val agency: String? = null,
                        @Expose @SerializedName("balance") val balance: Double? = null): Entity<UserAccountDomain>() {
 
-    companion object {
-        fun fromDomainModel(domainModel: UserAccountDomain): UserAccount {
-            return UserAccount(
-                domainModel.userID,
-                domainModel.name,
-                domainModel.bankAccount,
-                domainModel.agency,
-                domainModel.balance
-            )
-        }
-    }
-
     override fun asDomainModel(): UserAccountDomain {
         return UserAccountDomain(userID, name, bankAccount, agency, balance)
     }
+
 }

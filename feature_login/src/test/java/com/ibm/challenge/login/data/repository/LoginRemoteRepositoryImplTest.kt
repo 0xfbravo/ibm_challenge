@@ -3,23 +3,18 @@ package com.ibm.challenge.login.data.repository
 import io.reactivex.rxjava3.android.plugins.RxAndroidPlugins
 import io.reactivex.rxjava3.plugins.RxJavaPlugins
 import io.reactivex.rxjava3.schedulers.Schedulers
-import okhttp3.ResponseBody
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
-import retrofit2.HttpException
-import retrofit2.Response
-import java.io.File
-import java.util.concurrent.TimeUnit
 
-class LoginRepositoryImplTest {
+class LoginRemoteRepositoryImplTest {
 
     private val serverPort = 1234
     private val mockWebServer = MockWebServer()
-    private lateinit var loginRepositoryImpl: LoginRepositoryImpl
+    private lateinit var loginRemoteRepositoryImpl: LoginRemoteRepositoryImpl
 
     private fun getJson(path : String): String {
         return this.javaClass.classLoader!!.getResourceAsStream(path).bufferedReader().use { it.readText() }
@@ -35,7 +30,7 @@ class LoginRepositoryImplTest {
 
         /* Server setup */
         mockWebServer.start(serverPort)
-        loginRepositoryImpl = LoginRepositoryImpl(mockWebServer.url("/").toString())
+        loginRemoteRepositoryImpl = LoginRemoteRepositoryImpl(mockWebServer.url("/").toString())
     }
 
     @After
@@ -53,7 +48,7 @@ class LoginRepositoryImplTest {
         mockWebServer.enqueue(response)
 
         /* Init test */
-        val testObserver = loginRepositoryImpl.postLogin("abc123", "123abc").test()
+        val testObserver = loginRemoteRepositoryImpl.postLogin("abc123", "123abc").test()
 
         val result = testObserver.values().first()
         testObserver.assertComplete()
@@ -82,7 +77,7 @@ class LoginRepositoryImplTest {
         mockWebServer.enqueue(response)
 
         /* Init test */
-        val testObserver = loginRepositoryImpl.postLogin("abc123", "123abc").test()
+        val testObserver = loginRemoteRepositoryImpl.postLogin("abc123", "123abc").test()
 
         val result = testObserver.values().first()
         testObserver.assertComplete()
