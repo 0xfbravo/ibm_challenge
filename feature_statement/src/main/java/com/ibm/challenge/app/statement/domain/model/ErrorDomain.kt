@@ -1,4 +1,4 @@
-package com.ibm.challenge.statement.domain.model
+package com.ibm.challenge.app.statement.domain.model
 
 import com.ibm.challenge.domain.model.DomainModel
 

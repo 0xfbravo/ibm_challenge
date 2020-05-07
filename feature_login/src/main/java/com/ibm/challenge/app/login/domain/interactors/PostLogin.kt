@@ -1,10 +1,10 @@
-package com.ibm.challenge.login.domain.interactors
+package com.ibm.challenge.app.login.domain.interactors
 
 import com.ibm.challenge.domain.interactos.Interactor
 import com.ibm.challenge.domain.repository.LocalRepository
-import com.ibm.challenge.login.domain.exceptions.InvalidLoginException
-import com.ibm.challenge.login.domain.model.LoginResponseDomain
-import com.ibm.challenge.login.domain.repository.LoginRemoteRepository
+import com.ibm.challenge.app.login.domain.exceptions.InvalidLoginException
+import com.ibm.challenge.app.login.domain.model.LoginResponseDomain
+import com.ibm.challenge.app.login.domain.repository.LoginRemoteRepository
 import io.reactivex.rxjava3.core.Single
 
 class PostLogin(private val localRepository: LocalRepository,

@@ -1,7 +1,7 @@
-package com.ibm.challenge.login.domain.repository
+package com.ibm.challenge.app.login.domain.repository
 
 import com.ibm.challenge.domain.repository.RemoteRepository
-import com.ibm.challenge.login.domain.model.LoginResponseDomain
+import com.ibm.challenge.app.login.domain.model.LoginResponseDomain
 import io.reactivex.rxjava3.core.Single
 
 interface LoginRemoteRepository: RemoteRepository {

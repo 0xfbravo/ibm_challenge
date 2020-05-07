@@ -1,4 +1,4 @@
-package com.ibm.challenge.login.data.repository.services
+package com.ibm.challenge.app.login.data.repository.services
 
 import com.ibm.challenge.data.core.RequestManager
 

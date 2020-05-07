@@ -1,10 +1,10 @@
-package com.ibm.challenge.statement.domain.interactors
+package com.ibm.challenge.app.statement.domain.interactors
 
 import com.ibm.challenge.domain.interactos.Interactor
 import com.ibm.challenge.domain.repository.LocalRepository
-import com.ibm.challenge.statement.domain.exceptions.InvalidUserIdException
-import com.ibm.challenge.statement.domain.model.StatementResponseDomain
-import com.ibm.challenge.statement.domain.repository.StatementRemoteRepository
+import com.ibm.challenge.app.statement.domain.exceptions.InvalidUserIdException
+import com.ibm.challenge.app.statement.domain.model.StatementResponseDomain
+import com.ibm.challenge.app.statement.domain.repository.StatementRemoteRepository
 import io.reactivex.rxjava3.core.Single
 
 class GetStatements(private val localRepository: LocalRepository,

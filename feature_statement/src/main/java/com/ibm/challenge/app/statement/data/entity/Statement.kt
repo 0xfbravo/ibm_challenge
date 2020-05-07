@@ -1,9 +1,9 @@
-package com.ibm.challenge.statement.data.entity
+package com.ibm.challenge.app.statement.data.entity
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import com.ibm.challenge.data.entity.Entity
-import com.ibm.challenge.statement.domain.model.StatementDomain
+import com.ibm.challenge.app.statement.domain.model.StatementDomain
 
 data class Statement(@Expose @SerializedName("title") val title: String? = null,
                      @Expose @SerializedName("description") val description: String? = null,

@@ -1,9 +1,9 @@
-package com.ibm.challenge.login.data.entity
+package com.ibm.challenge.app.login.data.entity
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import com.ibm.challenge.data.entity.Entity
-import com.ibm.challenge.login.domain.model.UserAccountDomain
+import com.ibm.challenge.app.login.domain.model.UserAccountDomain
 
 data class UserAccountEntity(@Expose @SerializedName("userId") val userID: Long? = null,
                              @Expose @SerializedName("name") val name: String? = null,
