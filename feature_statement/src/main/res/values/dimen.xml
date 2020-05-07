@@ -2,6 +2,7 @@
 
     <dimen name="statementLabelSmallTextSize">12sp</dimen>
     <dimen name="statementValueBigTextSize">25sp</dimen>
+    <dimen name="statementListTitleSize">17sp</dimen>
     <dimen name="statementCardTitleSize">16sp</dimen>
     <dimen name="statementCardDateSize">12sp</dimen>
     <dimen name="statementCardDescriptionSize">16sp</dimen>

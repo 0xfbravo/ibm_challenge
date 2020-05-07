@@ -1,6 +1,7 @@
 <resources>
     <string name="account">Conta</string>
     <string name="balance">Saldo</string>
+    <string name="recent">Recentes</string>
 
     <!-- Statement Error -->
     <string name="statement_error_title">Ocorreu um erro…</string>
