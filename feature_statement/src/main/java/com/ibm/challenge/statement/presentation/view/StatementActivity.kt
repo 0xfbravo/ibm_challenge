@@ -3,6 +3,7 @@ package com.ibm.challenge.statement.presentation.view
 import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ibm.challenge.app.statement.R
 import com.ibm.challenge.core.Formats
@@ -37,8 +38,18 @@ class StatementActivity : BaseActivity(), StatementView  {
         account.text = "${presenter.currentUser?.bankAccount} / ${presenter.currentUser?.agency}"
         balance.text = Formats.currencyFormatter.format(presenter.currentUser?.balance)
 
+        logout.setOnClickListener { presenter.handleLogout() }
+
         statementsRecyclerView.adapter = StatementsListAdapter()
         statementsRecyclerView.layoutManager = LinearLayoutManager(this)
+    }
+
+    override fun showLoading() {
+        loading.visibility =  View.VISIBLE
+    }
+
+    override fun hideLoading() {
+        loading.visibility = View.GONE
     }
 
     override fun updateStatementList(statementList: List<StatementModel>) {

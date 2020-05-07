@@ -56,4 +56,9 @@ class StatementPresenter(private val navigator: Navigator,
         view?.showStatementError()
     }
 
+    fun handleLogout() {
+        // TODO: Add logout user logic
+        navigator.navigateToLogin()
+    }
+
 }

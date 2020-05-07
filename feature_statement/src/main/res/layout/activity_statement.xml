@@ -112,4 +112,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+    <include
+        android:id="@+id/loading"
+        layout="@layout/loading"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/statementsRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/statementsRecyclerView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
