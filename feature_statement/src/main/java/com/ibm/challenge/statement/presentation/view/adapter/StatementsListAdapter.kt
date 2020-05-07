@@ -30,7 +30,7 @@ class StatementsListAdapter: RecyclerView.Adapter<StatementViewHolder>() {
         statement?.let {
             holder.title.text = statement.title
             holder.description.text = statement.description
-            holder.date.text = statement.date.toString()
+            holder.date.text = Formats.statementCardFormat.format(statement.date!!)
             holder.value.text = Formats.currencyFormatter.format(statement.value)
         }
     }
