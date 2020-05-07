@@ -1,7 +1,7 @@
 package com.ibm.challenge.data.repository.local
 
-import com.ibm.challenge.data.exceptions.ObjectIsntInCacheException
 import com.ibm.challenge.core.model.DomainModel
+import com.ibm.challenge.data.exceptions.ObjectIsntInCacheException
 import com.ibm.challenge.domain.repository.LocalRepository
 import io.realm.Realm
 import org.joda.time.DateTime

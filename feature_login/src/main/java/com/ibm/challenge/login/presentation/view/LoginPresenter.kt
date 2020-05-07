@@ -1,5 +1,7 @@
 package com.ibm.challenge.login.presentation.view
 
+import com.ibm.challenge.core.Navigator
+import com.ibm.challenge.core.mvp.BasePresenter
 import com.ibm.challenge.login.core.PresentationModelMapper
 import com.ibm.challenge.login.domain.exceptions.InvalidLoginException
 import com.ibm.challenge.login.domain.interactors.PostLogin
@@ -7,8 +9,6 @@ import com.ibm.challenge.login.domain.interactors.ValidateCpf
 import com.ibm.challenge.login.domain.interactors.ValidateEmail
 import com.ibm.challenge.login.domain.interactors.ValidatePassword
 import com.ibm.challenge.login.domain.model.LoginResponseDomain
-import com.ibm.challenge.core.Navigator
-import com.ibm.challenge.core.mvp.BasePresenter
 
 class LoginPresenter(private val navigator: Navigator,
                      private val validateCpf: ValidateCpf,

@@ -4,7 +4,6 @@ import com.ibm.challenge.login.domain.model.LoginErrorDomain
 import com.ibm.challenge.login.domain.model.LoginResponseDomain
 import com.ibm.challenge.login.domain.model.UserAccountDomain
 import com.ibm.challenge.presentation.model.login.LoginErrorModel
-import com.ibm.challenge.presentation.model.statement.StatementErrorModel
 import com.ibm.challenge.presentation.model.login.LoginResponseModel
 import com.ibm.challenge.presentation.model.login.UserAccountModel
 

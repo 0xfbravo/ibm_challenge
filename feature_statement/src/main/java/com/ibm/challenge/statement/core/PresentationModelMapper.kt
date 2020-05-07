@@ -1,11 +1,11 @@
 package com.ibm.challenge.statement.core
 
-import com.ibm.challenge.statement.domain.model.StatementErrorDomain
-import com.ibm.challenge.statement.domain.model.StatementDomain
-import com.ibm.challenge.statement.domain.model.StatementResponseDomain
 import com.ibm.challenge.presentation.model.statement.StatementErrorModel
 import com.ibm.challenge.presentation.model.statement.StatementModel
 import com.ibm.challenge.presentation.model.statement.StatementResponseModel
+import com.ibm.challenge.statement.domain.model.StatementDomain
+import com.ibm.challenge.statement.domain.model.StatementErrorDomain
+import com.ibm.challenge.statement.domain.model.StatementResponseDomain
 
 object PresentationModelMapper {
 

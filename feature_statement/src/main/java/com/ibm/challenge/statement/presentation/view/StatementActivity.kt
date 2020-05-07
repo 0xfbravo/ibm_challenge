@@ -2,8 +2,8 @@ package com.ibm.challenge.statement.presentation.view
 
 import android.os.Bundle
 import com.ibm.challenge.app.statement.R
-import com.ibm.challenge.statement.FeatureStatementModule
 import com.ibm.challenge.core.mvp.BaseActivity
+import com.ibm.challenge.statement.FeatureStatementModule
 import org.koin.android.ext.android.inject
 import org.koin.core.context.loadKoinModules
 import org.koin.core.parameter.parametersOf

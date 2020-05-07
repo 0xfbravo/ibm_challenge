@@ -1,10 +1,10 @@
 package com.ibm.challenge.statement.core
 
-import com.ibm.challenge.statement.data.entity.StatementErrorEntity
 import com.ibm.challenge.statement.data.entity.StatementEntity
+import com.ibm.challenge.statement.data.entity.StatementErrorEntity
 import com.ibm.challenge.statement.data.entity.StatementResponseEntity
-import com.ibm.challenge.statement.domain.model.StatementErrorDomain
 import com.ibm.challenge.statement.domain.model.StatementDomain
+import com.ibm.challenge.statement.domain.model.StatementErrorDomain
 import com.ibm.challenge.statement.domain.model.StatementResponseDomain
 
 object DomainModelMapper {

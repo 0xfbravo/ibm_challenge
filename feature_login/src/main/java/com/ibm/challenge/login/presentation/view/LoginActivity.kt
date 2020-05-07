@@ -5,8 +5,8 @@ import android.os.Bundle
 import androidx.core.widget.doOnTextChanged
 import com.ibm.challenge.app.login.R
 import com.ibm.challenge.core.Maskify
-import com.ibm.challenge.login.FeatureLoginModule
 import com.ibm.challenge.core.mvp.BaseActivity
+import com.ibm.challenge.login.FeatureLoginModule
 import kotlinx.android.synthetic.main.activity_login.*
 import org.koin.android.ext.android.inject
 import org.koin.core.context.loadKoinModules
