@@ -4,11 +4,38 @@
     <style name="StatementLabelSmallText" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">@dimen/statementLabelSmallTextSize</item>
         <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/helvetica_neue</item>
     </style>
 
     <style name="StatementValueBigText" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">@dimen/statementValueBigTextSize</item>
         <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/helvetica_neue_light</item>
+    </style>
+
+    <style name="StatementCard.Title" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/statementCardTitleSize</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="fontFamily">@font/helvetica_neue</item>
+    </style>
+
+    <style name="StatementCard.Date" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/statementCardDateSize</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="fontFamily">@font/helvetica_neue</item>
+    </style>
+
+    <style name="StatementCard.Description" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/statementCardDescriptionSize</item>
+        <item name="android:textColor">@color/darker_gray</item>
+        <item name="fontFamily">@font/helvetica_neue</item>
+    </style>
+
+    <style name="StatementCard.Value" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/statementCardValueSize</item>
+        <item name="android:textColor">@color/darker_gray</item>
+        <item name="android:textAlignment">viewEnd</item>
+        <item name="fontFamily">@font/helvetica_neue_light</item>
     </style>
 
 </resources>

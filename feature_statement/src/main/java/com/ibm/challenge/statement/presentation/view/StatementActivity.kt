@@ -3,12 +3,14 @@ package com.ibm.challenge.statement.presentation.view
 import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ibm.challenge.app.statement.R
 import com.ibm.challenge.core.Formats
 import com.ibm.challenge.core.mvp.BaseActivity
 import com.ibm.challenge.presentation.model.login.UserAccountModel
 import com.ibm.challenge.presentation.model.statement.StatementModel
 import com.ibm.challenge.statement.FeatureStatementModule
+import com.ibm.challenge.statement.presentation.view.adapter.StatementsListAdapter
 import kotlinx.android.synthetic.main.activity_statement.*
 import org.koin.android.ext.android.inject
 import org.koin.core.context.loadKoinModules
@@ -34,10 +36,14 @@ class StatementActivity : BaseActivity(), StatementView  {
         name.text = presenter.currentUser?.name
         account.text = "${presenter.currentUser?.bankAccount} / ${presenter.currentUser?.agency}"
         balance.text = Formats.currencyFormatter.format(presenter.currentUser?.balance)
+
+        statementsRecyclerView.adapter = StatementsListAdapter()
+        statementsRecyclerView.layoutManager = LinearLayoutManager(this)
     }
 
     override fun updateStatementList(statementList: List<StatementModel>) {
-        Log.d("STATEMENT", statementList.toString())
+        val statementsListAdapter = statementsRecyclerView.adapter as StatementsListAdapter
+        statementsListAdapter.statementsList = statementList
     }
 
     override fun showStatementError(error: String?) {

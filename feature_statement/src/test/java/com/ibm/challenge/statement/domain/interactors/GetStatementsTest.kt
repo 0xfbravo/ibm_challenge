@@ -9,6 +9,7 @@ import com.ibm.challenge.statement.domain.repository.StatementRemoteRepository
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import io.reactivex.rxjava3.core.Single
+import org.joda.time.DateTime
 import org.junit.Before
 import org.junit.Test
 
@@ -20,9 +21,9 @@ class GetStatementsTest {
 
     private val successResponseDomain = StatementResponseDomain(
         statementList = arrayListOf(
-            StatementDomain("Pagamento", "Conta de luz", "2018-08-15", -50.0),
-            StatementDomain("TED Recebida", "Joao Alfredo", "2018-07-25", 745.03),
-            StatementDomain("DOC Recebida", "Victor Silva", "2018-06-23", 399.9)
+            StatementDomain("Pagamento", "Conta de luz", DateTime.now().toDate(), -50.0),
+            StatementDomain("TED Recebida", "Joao Alfredo", DateTime.now().toDate(), 745.03),
+            StatementDomain("DOC Recebida", "Victor Silva", DateTime.now().toDate(), 399.9)
         )
     )
 

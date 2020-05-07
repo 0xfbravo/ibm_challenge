@@ -44,6 +44,7 @@
     <style name="SmallTextView" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">@dimen/appNameTextSize</item>
         <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/helvetica_neue</item>
     </style>
 
 </resources>
