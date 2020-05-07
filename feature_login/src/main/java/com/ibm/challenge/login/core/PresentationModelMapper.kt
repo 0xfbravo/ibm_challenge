@@ -1,9 +1,10 @@
 package com.ibm.challenge.login.core
 
-import com.ibm.challenge.login.domain.model.ErrorDomain
+import com.ibm.challenge.login.domain.model.LoginErrorDomain
 import com.ibm.challenge.login.domain.model.LoginResponseDomain
 import com.ibm.challenge.login.domain.model.UserAccountDomain
-import com.ibm.challenge.presentation.model.ErrorModel
+import com.ibm.challenge.presentation.model.login.LoginErrorModel
+import com.ibm.challenge.presentation.model.statement.StatementErrorModel
 import com.ibm.challenge.presentation.model.login.LoginResponseModel
 import com.ibm.challenge.presentation.model.login.UserAccountModel
 
@@ -19,8 +20,11 @@ object PresentationModelMapper {
         return UserAccountModel(entity.userID, entity.name, entity.bankAccount, entity.agency, entity.balance)
     }
 
-    private fun mapError(entity: ErrorDomain): ErrorModel {
-        return ErrorModel(entity.code, entity.message)
+    private fun mapError(entity: LoginErrorDomain): LoginErrorModel {
+        return LoginErrorModel(
+            entity.code,
+            entity.message
+        )
     }
 
 }

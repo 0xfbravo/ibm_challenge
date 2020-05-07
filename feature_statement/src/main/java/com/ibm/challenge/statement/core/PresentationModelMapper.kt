@@ -1,9 +1,9 @@
 package com.ibm.challenge.statement.core
 
-import com.ibm.challenge.statement.domain.model.ErrorDomain
+import com.ibm.challenge.statement.domain.model.StatementErrorDomain
 import com.ibm.challenge.statement.domain.model.StatementDomain
 import com.ibm.challenge.statement.domain.model.StatementResponseDomain
-import com.ibm.challenge.presentation.model.ErrorModel
+import com.ibm.challenge.presentation.model.statement.StatementErrorModel
 import com.ibm.challenge.presentation.model.statement.StatementModel
 import com.ibm.challenge.presentation.model.statement.StatementResponseModel
 
@@ -23,8 +23,11 @@ object PresentationModelMapper {
         return StatementModel(domain.title, domain.description, domain.date, domain.value)
     }
 
-    private fun mapError(domain: ErrorDomain): ErrorModel {
-        return ErrorModel(domain.code, domain.message)
+    private fun mapError(domain: StatementErrorDomain): StatementErrorModel {
+        return StatementErrorModel(
+            domain.code,
+            domain.message
+        )
     }
 
 }

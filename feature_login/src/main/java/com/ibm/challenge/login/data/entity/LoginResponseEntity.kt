@@ -5,4 +5,4 @@ import com.google.gson.annotations.SerializedName
 import com.ibm.challenge.core.model.Entity
 
 data class LoginResponseEntity(@Expose @SerializedName("userAccount") val userAccount: UserAccountEntity? = null,
-                               @Expose @SerializedName("error") val error: ErrorEntity? = null): Entity()
+                               @Expose @SerializedName("error") val error: LoginErrorEntity? = null): Entity()

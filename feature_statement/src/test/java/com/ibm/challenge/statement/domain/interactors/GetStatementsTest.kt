@@ -2,7 +2,7 @@ package com.ibm.challenge.statement.domain.interactors
 
 import com.ibm.challenge.domain.repository.LocalRepository
 import com.ibm.challenge.statement.domain.exceptions.InvalidUserIdException
-import com.ibm.challenge.statement.domain.model.ErrorDomain
+import com.ibm.challenge.statement.domain.model.StatementErrorDomain
 import com.ibm.challenge.statement.domain.model.StatementDomain
 import com.ibm.challenge.statement.domain.model.StatementResponseDomain
 import com.ibm.challenge.statement.domain.repository.StatementRemoteRepository
@@ -27,7 +27,7 @@ class GetStatementsTest {
     )
 
     private val errorResponseDomain = StatementResponseDomain(
-        error = ErrorDomain(53, "ID de usuário inválido")
+        error = StatementErrorDomain(53, "ID de usuário inválido")
     )
 
     @Before

@@ -2,7 +2,7 @@ package com.ibm.challenge.login.domain.interactors
 
 import com.ibm.challenge.domain.repository.LocalRepository
 import com.ibm.challenge.login.domain.exceptions.InvalidLoginException
-import com.ibm.challenge.login.domain.model.ErrorDomain
+import com.ibm.challenge.login.domain.model.LoginErrorDomain
 import com.ibm.challenge.login.domain.model.LoginResponseDomain
 import com.ibm.challenge.login.domain.model.UserAccountDomain
 import com.ibm.challenge.login.domain.repository.LoginRemoteRepository
@@ -25,7 +25,7 @@ class PostLoginTest {
     )
 
     private val errorResponseDomain = LoginResponseDomain(
-        error = ErrorDomain(53, "Usuário ou senha incorreta")
+        error = LoginErrorDomain(53, "Usuário ou senha incorreta")
     )
 
     @Before

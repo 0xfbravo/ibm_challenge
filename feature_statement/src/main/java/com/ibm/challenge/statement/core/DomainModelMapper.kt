@@ -1,9 +1,9 @@
 package com.ibm.challenge.statement.core
 
-import com.ibm.challenge.statement.data.entity.ErrorEntity
+import com.ibm.challenge.statement.data.entity.StatementErrorEntity
 import com.ibm.challenge.statement.data.entity.StatementEntity
 import com.ibm.challenge.statement.data.entity.StatementResponseEntity
-import com.ibm.challenge.statement.domain.model.ErrorDomain
+import com.ibm.challenge.statement.domain.model.StatementErrorDomain
 import com.ibm.challenge.statement.domain.model.StatementDomain
 import com.ibm.challenge.statement.domain.model.StatementResponseDomain
 
@@ -23,8 +23,8 @@ object DomainModelMapper {
         return StatementDomain(entity.title, entity.description, entity.date, entity.value)
     }
 
-    private fun mapError(entity: ErrorEntity): ErrorDomain {
-        return ErrorDomain(entity.code, entity.message)
+    private fun mapError(entity: StatementErrorEntity): StatementErrorDomain {
+        return StatementErrorDomain(entity.code, entity.message)
     }
 
 }
