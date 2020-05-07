@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
-    package="com.ibm.app.statement">
+    package="com.ibm.challenge.app.statement">
 
     <dist:module
         dist:instant="false"
@@ -8,7 +9,12 @@
         <dist:delivery>
             <dist:install-time />
         </dist:delivery>
+
         <dist:fusing dist:include="true" />
     </dist:module>
-</manifest>
 
+    <application>
+        <activity android:name="com.ibm.challenge.statement.presentation.view.StatementActivity"></activity>
+    </application>
+
+</manifest>

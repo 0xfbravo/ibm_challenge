@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.ibm.app.login">
+    package="com.ibm.challenge.app.login">
 
     <dist:module
         dist:instant="false"
@@ -17,7 +17,7 @@
     <application
         tools:ignore="LockedOrientationActivity">
         <activity
-            android:name="com.ibm.challenge.app.login.presentation.view.LoginActivity"
+            android:name="com.ibm.challenge.login.presentation.view.LoginActivity"
             android:screenOrientation="userPortrait"
             />
     </application>

@@ -2,7 +2,7 @@ package com.ibm.challenge.data.core
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.ibm.challenge.domain.core.DateUtils
+import com.ibm.challenge.core.DateUtils
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
 import io.reactivex.rxjava3.plugins.RxJavaPlugins
 import okhttp3.OkHttpClient
