@@ -36,6 +36,7 @@ class LoginPresenter(private val navigator: Navigator,
     }
 
     fun handleLoginButtonClick() {
+        view?.showLoading()
         try {
             postLogin
                 .withParams(currentUser, currentPassword)
@@ -44,18 +45,21 @@ class LoginPresenter(private val navigator: Navigator,
         }
         catch (e : InvalidLoginException) {
             e.printStackTrace()
+            view?.hideLoading()
             view?.showLoginError()
         }
     }
 
     private fun handlePostLoginError(error: Throwable) {
         error.printStackTrace()
+        view?.hideLoading()
         view?.showLoginError()
     }
 
     private fun handlePostLoginSuccess(response: LoginResponseDomain) {
         val responseModel = LoginResponseModel.fromDomainModel(response)
         if (responseModel.error != null && !responseModel.error.message.isNullOrEmpty()) {
+            view?.hideLoading()
             view?.showLoginError(responseModel.error.message)
             return
         }
