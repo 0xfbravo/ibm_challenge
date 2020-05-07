@@ -9,6 +9,8 @@ import com.ibm.challenge.login.domain.interactors.ValidateCpf
 import com.ibm.challenge.login.domain.interactors.ValidateEmail
 import com.ibm.challenge.login.domain.interactors.ValidatePassword
 import com.ibm.challenge.login.domain.model.LoginResponseDomain
+import com.ibm.challenge.login.domain.model.UserAccountDomain
+import com.ibm.challenge.presentation.model.login.UserAccountModel
 
 class LoginPresenter(private val navigator: Navigator,
                      private val validateCpf: ValidateCpf,
@@ -63,6 +65,9 @@ class LoginPresenter(private val navigator: Navigator,
             view?.showLoginError(responseModel.error?.message)
             return
         }
+
+        navigateToStatements(responseModel.userAccount!!)
+        view?.hideLoading()
     }
 
     private fun isLoginButtonEnabled(): Boolean {
@@ -83,8 +88,8 @@ class LoginPresenter(private val navigator: Navigator,
         return validatePassword.withParams(text).execute()
     }
 
-    private fun navigateToStatements() {
-
+    private fun navigateToStatements(userAccountModel: UserAccountModel) {
+        navigator.navigateToStatement(userAccountModel)
     }
 
 }

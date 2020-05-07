@@ -1,6 +1,5 @@
 package com.ibm.challenge.core.mvp
 
-import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +9,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import com.ibm.challenge.R
 
-abstract class BaseActivity: Activity(), BaseView {
+abstract class BaseActivity: AppCompatActivity(), BaseView {
 
     private var loadingLayout: View? = null
     private lateinit var rootLayout: ViewGroup
