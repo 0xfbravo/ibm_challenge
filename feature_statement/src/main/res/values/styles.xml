@@ -1,0 +1,14 @@
+<resources
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="StatementLabelSmallText" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/statementLabelSmallTextSize</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="StatementValueBigText" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/statementValueBigTextSize</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+</resources>

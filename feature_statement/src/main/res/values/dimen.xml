@@ -1,0 +1,6 @@
+<resources>
+
+    <dimen name="statementLabelSmallTextSize">12sp</dimen>
+    <dimen name="statementValueBigTextSize">25sp</dimen>
+
+</resources>

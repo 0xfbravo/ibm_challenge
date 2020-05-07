@@ -27,6 +27,20 @@
         <item name="windowActionBar">true</item>
     </style>
 
+    <!-- Base Activity Themes -->
+    <style name="AppTheme.Purple" parent="AppTheme.NoTitleBar">
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/purple</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="M">true</item>
+    </style>
+    <style name="AppTheme.White" parent="AppTheme.NoTitleBar">
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/white</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="M">true</item>
+    </style>
+    <style name="AppTheme.Gray" parent="AppTheme.NoTitleBar">
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/gray</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="M">true</item>
+    </style>
+
     <style name="SmallTextView" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">@dimen/appNameTextSize</item>
         <item name="android:textColor">@color/white</item>
