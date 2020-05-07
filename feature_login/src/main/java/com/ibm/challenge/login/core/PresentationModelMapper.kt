@@ -15,11 +15,11 @@ object PresentationModelMapper {
         return LoginResponseModel(statementListModel, errorModel)
     }
 
-    fun mapUserAccount(entity: UserAccountDomain): UserAccountModel {
+    private fun mapUserAccount(entity: UserAccountDomain): UserAccountModel {
         return UserAccountModel(entity.userID, entity.name, entity.bankAccount, entity.agency, entity.balance)
     }
 
-    fun mapError(entity: ErrorDomain): ErrorModel {
+    private fun mapError(entity: ErrorDomain): ErrorModel {
         return ErrorModel(entity.code, entity.message)
     }
 

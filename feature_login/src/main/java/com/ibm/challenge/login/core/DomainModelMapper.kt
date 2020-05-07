@@ -15,11 +15,11 @@ object DomainModelMapper {
         return LoginResponseDomain(statementListModel, errorModel)
     }
 
-    fun mapUserAccount(entity: UserAccountEntity): UserAccountDomain {
+    private fun mapUserAccount(entity: UserAccountEntity): UserAccountDomain {
         return UserAccountDomain(entity.userID, entity.name, entity.bankAccount, entity.agency, entity.balance)
     }
 
-    fun mapError(entity: ErrorEntity): ErrorDomain {
+    private fun mapError(entity: ErrorEntity): ErrorDomain {
         return ErrorDomain(entity.code, entity.message)
     }
 

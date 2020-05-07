@@ -1,6 +1,7 @@
 package com.ibm.challenge.login.data.repository
 
 import com.ibm.challenge.data.core.RequestManager
+import com.ibm.challenge.login.core.DomainModelMapper
 import com.ibm.challenge.login.data.entity.LoginRequestBodyEntity
 import com.ibm.challenge.login.data.repository.services.LoginServicesFactory
 import com.ibm.challenge.login.domain.interactors.PostLogin
@@ -20,7 +21,7 @@ class LoginRemoteRepositoryImpl(private val baseURL: String = RequestManager.bas
             .doOnError { onRequestError(PostLogin.tag, it.localizedMessage!!) }
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
-            .map { it.asDomainModel() }
+            .map { DomainModelMapper.mapLoginResponse(it) }
     }
 
 }

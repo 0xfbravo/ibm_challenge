@@ -1,6 +1,7 @@
 package com.ibm.challenge.statement.data.repository
 
 import com.ibm.challenge.data.core.RequestManager
+import com.ibm.challenge.statement.core.DomainModelMapper
 import com.ibm.challenge.statement.data.repository.services.StatementServicesFactory
 import com.ibm.challenge.statement.domain.interactors.GetStatements
 import com.ibm.challenge.statement.domain.model.StatementResponseDomain
@@ -18,6 +19,6 @@ class StatementRemoteRepositoryImpl(private val baseURL: String = RequestManager
             .doOnError { onRequestError(GetStatements.tag, it.localizedMessage!!) }
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
-            .map { it.asDomainModel() }
+            .map { DomainModelMapper.mapStatementResponse(it) }
     }
 }

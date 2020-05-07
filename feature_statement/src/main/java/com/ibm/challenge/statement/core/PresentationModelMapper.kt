@@ -15,15 +15,15 @@ object PresentationModelMapper {
         return StatementResponseModel(statementListModel, errorModel)
     }
 
-    fun mapStatementList(domainList: List<StatementDomain>): List<StatementModel> {
+    private fun mapStatementList(domainList: List<StatementDomain>): List<StatementModel> {
         return domainList.map { mapStatement(it) }.toList()
     }
 
-    fun mapStatement(domain: StatementDomain): StatementModel {
+    private fun mapStatement(domain: StatementDomain): StatementModel {
         return StatementModel(domain.title, domain.description, domain.date, domain.value)
     }
 
-    fun mapError(domain: ErrorDomain): ErrorModel {
+    private fun mapError(domain: ErrorDomain): ErrorModel {
         return ErrorModel(domain.code, domain.message)
     }
 

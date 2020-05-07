@@ -15,15 +15,15 @@ object DomainModelMapper {
         return StatementResponseDomain(statementListModel, errorModel)
     }
 
-    fun mapStatementList(entityList: List<StatementEntity>): List<StatementDomain> {
+    private fun mapStatementList(entityList: List<StatementEntity>): List<StatementDomain> {
         return entityList.map { mapStatement(it) }.toList()
     }
 
-    fun mapStatement(entity: StatementEntity): StatementDomain {
+    private fun mapStatement(entity: StatementEntity): StatementDomain {
         return StatementDomain(entity.title, entity.description, entity.date, entity.value)
     }
 
-    fun mapError(entity: ErrorEntity): ErrorDomain {
+    private fun mapError(entity: ErrorEntity): ErrorDomain {
         return ErrorDomain(entity.code, entity.message)
     }
 
