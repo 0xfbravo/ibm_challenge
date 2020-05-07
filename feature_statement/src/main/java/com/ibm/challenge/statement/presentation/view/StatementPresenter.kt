@@ -3,6 +3,7 @@ package com.ibm.challenge.statement.presentation.view
 import com.ibm.challenge.core.Navigator
 import com.ibm.challenge.core.mvp.BasePresenter
 import com.ibm.challenge.presentation.model.login.UserAccountModel
+import com.ibm.challenge.statement.core.PresentationModelMapper
 import com.ibm.challenge.statement.domain.exceptions.InvalidUserIdException
 import com.ibm.challenge.statement.domain.interactors.GetStatements
 import com.ibm.challenge.statement.domain.model.StatementResponseDomain
@@ -10,13 +11,17 @@ import com.ibm.challenge.statement.domain.model.StatementResponseDomain
 class StatementPresenter(private val navigator: Navigator,
                          private val getStatements: GetStatements): BasePresenter<StatementView>() {
 
-    lateinit var currentUser: UserAccountModel
+    var currentUser: UserAccountModel? = null
+    set(value) {
+        field = value
+        getStatements()
+    }
 
-    fun getStatements() {
+    private fun getStatements() {
         view?.showLoading()
         try {
             getStatements
-                .withParams(currentUser.userID!!)
+                .withParams(currentUser!!.userID!!)
                 .execute()
                 .subscribe({ handleGetStatementsSuccess(it) }, { handleGetStatementsError(it) })
         }
@@ -28,11 +33,27 @@ class StatementPresenter(private val navigator: Navigator,
     }
 
     private fun handleGetStatementsSuccess(response: StatementResponseDomain) {
-        TODO("Not implemented yet")
+        val responseModel = PresentationModelMapper.mapStatementResponse(response)
+        if (responseModel.error != null && !responseModel.error?.message.isNullOrEmpty()) {
+            view?.hideLoading()
+            view?.showStatementError(responseModel.error?.message)
+            return
+        }
+
+        if (responseModel.statementList.isNullOrEmpty()) {
+            view?.hideLoading()
+            view?.showStatementError()
+            return
+        }
+
+        view?.hideLoading()
+        view?.updateStatementList(responseModel.statementList!!)
     }
 
     private fun handleGetStatementsError(error: Throwable) {
-        TODO("Not implemented yet")
+        error.printStackTrace()
+        view?.hideLoading()
+        view?.showStatementError()
     }
 
 }

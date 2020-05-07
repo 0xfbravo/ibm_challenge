@@ -1,10 +1,13 @@
 package com.ibm.challenge.statement.presentation.view
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.util.Log
 import com.ibm.challenge.app.statement.R
 import com.ibm.challenge.core.Formats
 import com.ibm.challenge.core.mvp.BaseActivity
 import com.ibm.challenge.presentation.model.login.UserAccountModel
+import com.ibm.challenge.presentation.model.statement.StatementModel
 import com.ibm.challenge.statement.FeatureStatementModule
 import kotlinx.android.synthetic.main.activity_statement.*
 import org.koin.android.ext.android.inject
@@ -28,12 +31,23 @@ class StatementActivity : BaseActivity(), StatementView  {
     }
 
     private fun setupUI() {
-        name.text = presenter.currentUser.name
-        account.text = "${presenter.currentUser.bankAccount} / ${presenter.currentUser.agency}"
-        balance.text = Formats.currencyFormatter.format(presenter.currentUser.balance)
+        name.text = presenter.currentUser?.name
+        account.text = "${presenter.currentUser?.bankAccount} / ${presenter.currentUser?.agency}"
+        balance.text = Formats.currencyFormatter.format(presenter.currentUser?.balance)
+    }
+
+    override fun updateStatementList(statementList: List<StatementModel>) {
+        Log.d("STATEMENT", statementList.toString())
     }
 
     override fun showStatementError(error: String?) {
-        TODO("Not yet implemented")
+        val errorMessage = error ?: getString(R.string.generic_statement_error)
+
+        val builder = AlertDialog.Builder(this)
+        builder
+            .setTitle(R.string.statement_error_title)
+            .setMessage(errorMessage)
+            .setNeutralButton(R.string.ok, null)
+            .show()
     }
 }

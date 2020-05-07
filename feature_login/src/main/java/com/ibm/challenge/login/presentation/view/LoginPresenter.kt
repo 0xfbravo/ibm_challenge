@@ -66,6 +66,12 @@ class LoginPresenter(private val navigator: Navigator,
             return
         }
 
+        if (responseModel.userAccount == null) {
+            view?.hideLoading()
+            view?.showLoginError()
+            return
+        }
+
         navigateToStatements(responseModel.userAccount!!)
         view?.hideLoading()
     }

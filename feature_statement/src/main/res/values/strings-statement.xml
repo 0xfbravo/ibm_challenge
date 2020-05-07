@@ -1,4 +1,9 @@
 <resources>
     <string name="account">Conta</string>
     <string name="balance">Saldo</string>
+
+    <!-- Statement Error -->
+    <string name="statement_error_title">Ocorreu um erro…</string>
+    <string name="generic_statement_error">Não foi possível recuperar seu extrato no momento.</string>
+    <string name="ok">OK</string>
 </resources>
