@@ -34,7 +34,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/user_edit_text_placeholder"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:theme="@style/DefaultEditTextStyle" />
 
         <EditText
             android:id="@+id/passwordEditText"
@@ -42,7 +43,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/password_edit_text_placeholder"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:theme="@style/DefaultEditTextStyle" />
     </LinearLayout>
 
     <Button

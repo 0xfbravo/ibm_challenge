@@ -47,6 +47,12 @@
         <item name="fontFamily">@font/helvetica_neue</item>
     </style>
 
+    <style name="DefaultEditTextStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/helvetica_neue</item>
+        <item name="android:textColorHint">@color/gray</item>
+    </style>
+
     <style name="DefaultButton">
         <item name="android:textSize">@dimen/defaultButtonTextSize</item>
         <item name="android:layout_height">62dp</item>
