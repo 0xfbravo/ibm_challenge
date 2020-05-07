@@ -17,7 +17,7 @@
     <application
         tools:ignore="LockedOrientationActivity">
         <activity
-            android:name="com.ibm.challenge.login.presentation.view.LoginActivity"
+            android:name="com.ibm.challenge.app.login.presentation.view.LoginActivity"
             android:screenOrientation="userPortrait"
             />
     </application>
