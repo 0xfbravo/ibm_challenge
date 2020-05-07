@@ -1,5 +1,6 @@
 <resources>
 
     <dimen name="appNameTextSize">11sp</dimen>
+    <dimen name="defaultButtonTextSize">16sp</dimen>
 
 </resources>

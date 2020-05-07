@@ -19,7 +19,8 @@
         <activity
             android:name="com.ibm.challenge.login.presentation.view.LoginActivity"
             android:screenOrientation="userPortrait"
-            android:theme="@style/AppTheme.White"/>
+            android:theme="@style/AppTheme.White"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
     </application>
 
 </manifest>
