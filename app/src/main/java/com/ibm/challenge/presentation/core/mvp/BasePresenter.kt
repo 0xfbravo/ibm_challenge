@@ -2,7 +2,7 @@ package com.ibm.challenge.presentation.core.mvp
 
 abstract class BasePresenter<T: BaseView> {
 
-    private var view: T?  = null
+    var view: T?  = null
 
     fun attachView(view: T) {
         this.view = view

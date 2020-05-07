@@ -6,6 +6,9 @@ import com.ibm.challenge.login.domain.interactors.ValidateCpf
 import com.ibm.challenge.login.domain.interactors.ValidateEmail
 import com.ibm.challenge.login.domain.interactors.ValidatePassword
 import com.ibm.challenge.login.domain.repository.LoginRemoteRepository
+import com.ibm.challenge.login.presentation.view.LoginPresenter
+import com.ibm.challenge.presentation.core.Navigator
+import com.ibm.challenge.presentation.core.mvp.BaseActivity
 import org.koin.dsl.module
 
 object FeatureLoginModule {
@@ -21,7 +24,7 @@ object FeatureLoginModule {
         single { PostLogin(get(), get(), get(), get(), get()) }
 
         // Presentation
-
+        single { (activity: BaseActivity) -> LoginPresenter(Navigator(activity), get(), get(), get(), get()) }
     }
 
 }

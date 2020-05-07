@@ -1,7 +1,6 @@
 package com.ibm.challenge.presentation.view.splashscreen
 
 import android.os.Bundle
-import android.os.Handler
 import com.ibm.challenge.BuildConfig
 import com.ibm.challenge.R
 import com.ibm.challenge.presentation.core.mvp.BaseActivity

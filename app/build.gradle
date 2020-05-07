@@ -32,6 +32,10 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
 }
 
 dependencies {
@@ -74,4 +78,8 @@ dependencies {
 
     // JodaTime - https://github.com/JodaOrg/joda-time
     implementation "joda-time:joda-time:$joda_time_version"
+
+    // InputMask - https://github.com/RedMadRobot/input-mask-android
+    implementation "com.redmadrobot:input-mask-android:$inputmask_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kt_stdlib_version"
 }
