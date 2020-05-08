@@ -6,6 +6,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_gray">#FFFEFEFE</color>
     <color name="darker_gray">#FF485465</color>
+    <color name="gray_border">#FFDCE2EE</color>
 
     <!-- Purple Variations -->
     <color name="purple_25">#403B48EE</color>

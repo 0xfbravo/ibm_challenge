@@ -26,21 +26,28 @@
         app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appLogo">
+        app:layout_constraintTop_toBottomOf="@+id/appLogo"
+        app:layout_constraintVertical_bias="0.3">
 
         <EditText
             android:id="@+id/userEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/default_edittext_background"
             android:ems="10"
             android:hint="@string/user_edit_text_placeholder"
             android:inputType="textPersonName"
             android:theme="@style/DefaultEditTextStyle" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="21dp" />
+
         <EditText
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/default_edittext_background"
             android:ems="10"
             android:hint="@string/password_edit_text_placeholder"
             android:inputType="textPassword"
