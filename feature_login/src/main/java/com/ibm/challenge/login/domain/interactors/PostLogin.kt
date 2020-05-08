@@ -1,7 +1,6 @@
 package com.ibm.challenge.login.domain.interactors
 
 import com.ibm.challenge.domain.interactos.Interactor
-import com.ibm.challenge.domain.repository.LocalRepository
 import com.ibm.challenge.login.domain.exceptions.InvalidLoginException
 import com.ibm.challenge.login.domain.model.LoginResponseDomain
 import com.ibm.challenge.login.domain.repository.LoginRemoteRepository

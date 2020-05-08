@@ -9,6 +9,7 @@ import com.ibm.challenge.login.core.PresentationModelMapper
 import com.ibm.challenge.login.domain.exceptions.InvalidLoginException
 import com.ibm.challenge.login.domain.interactors.*
 import com.ibm.challenge.login.domain.model.LoginResponseDomain
+import com.ibm.challenge.login.domain.model.UserAccountDomain
 import com.ibm.challenge.presentation.model.login.UserAccountModel
 
 class LoginPresenter(private val navigator: Navigator,
@@ -73,7 +74,8 @@ class LoginPresenter(private val navigator: Navigator,
             return
         }
 
-        putCacheObject.withParams(CacheHelper.UserAccount, response.userAccount!!).execute()
+        val t = putCacheObject.withParams(CacheHelper.UserAccount, response.userAccount!!).execute()
+        val c = getCacheObject.withParams(CacheHelper.UserAccount, UserAccountDomain::class.java).execute()
         navigateToStatements(responseModel.userAccount!!)
         view?.hideLoading()
     }

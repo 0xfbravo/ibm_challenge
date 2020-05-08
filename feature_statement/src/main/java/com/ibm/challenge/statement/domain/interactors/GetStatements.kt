@@ -1,7 +1,7 @@
 package com.ibm.challenge.statement.domain.interactors
 
 import com.ibm.challenge.domain.interactos.Interactor
-import com.ibm.challenge.domain.repository.LocalRepository
+import com.ibm.challenge.domain.repository.local.LocalRepository
 import com.ibm.challenge.statement.domain.exceptions.InvalidUserIdException
 import com.ibm.challenge.statement.domain.model.StatementResponseDomain
 import com.ibm.challenge.statement.domain.repository.StatementRemoteRepository

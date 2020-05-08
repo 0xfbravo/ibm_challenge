@@ -1,4 +1,4 @@
-package com.ibm.challenge.domain.repository
+package com.ibm.challenge.domain.repository.remote
 
 import android.util.Log
 

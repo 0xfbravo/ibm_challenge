@@ -3,7 +3,7 @@ package com.ibm.challenge.domain.interactos.cache
 import com.ibm.challenge.core.model.DomainModel
 import com.ibm.challenge.domain.exceptions.InvalidCacheKeyException
 import com.ibm.challenge.domain.exceptions.ObjectIsNotInCacheException
-import com.ibm.challenge.domain.repository.LocalRepository
+import com.ibm.challenge.domain.repository.local.LocalRepository
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.doThrow
 import com.nhaarman.mockitokotlin2.mock
