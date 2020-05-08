@@ -53,7 +53,7 @@ class LoginActivity : BaseActivity(), LoginView {
     }
 
     override fun hideWelcomeBack() {
-        welcomeBack.visibility = View.GONE
+        welcomeBack.visibility = View.INVISIBLE
     }
 
     override fun maskUserCpf() = runOnUiThread {
