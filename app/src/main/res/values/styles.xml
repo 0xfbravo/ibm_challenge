@@ -30,7 +30,7 @@
     <!-- Base Activity Themes -->
     <style name="AppTheme.Purple" parent="AppTheme.NoTitleBar">
         <item name="android:statusBarColor" tools:targetApi="lollipop">@color/purple</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="M">true</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="M">false</item>
     </style>
     <style name="AppTheme.White" parent="AppTheme.NoTitleBar">
         <item name="android:statusBarColor" tools:targetApi="lollipop">@color/white</item>
@@ -38,18 +38,18 @@
     </style>
     <style name="AppTheme.Gray" parent="AppTheme.NoTitleBar">
         <item name="android:statusBarColor" tools:targetApi="lollipop">@color/gray</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="M">true</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="M">false</item>
     </style>
 
     <style name="SmallTextView" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">@dimen/appNameTextSize</item>
         <item name="android:textColor">@color/white</item>
-        <item name="fontFamily">@font/helvetica_neue</item>
+        <item name="android:fontFamily">@font/ibmplexsans_regular</item>
     </style>
 
     <style name="DefaultEditTextStyle">
         <item name="android:layout_height">wrap_content</item>
-        <item name="fontFamily">@font/helvetica_neue</item>
+        <item name="android:fontFamily">@font/ibmplexsans_regular</item>
         <item name="android:textColorHint">@color/gray</item>
     </style>
 
@@ -63,7 +63,7 @@
         <item name="android:background">@drawable/default_button_selector</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:textColor">@color/white</item>
-        <item name="fontFamily">@font/helvetica_neue</item>
+        <item name="android:fontFamily">@font/ibmplexsans_regular</item>
     </style>
 
 </resources>

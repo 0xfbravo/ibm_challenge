@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp"
     android:layout_marginBottom="16dp"
@@ -31,10 +31,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
+            android:layout_marginTop="19dp"
             android:layout_marginBottom="12dp"
             android:theme="@style/StatementCard.Description"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:layout_constraintVertical_bias="1.0"
             tools:text="Conta de Luz" />
 
         <TextView
@@ -47,16 +50,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/description"
+            app:layout_constraintTop_toTopOf="@+id/description"
             tools:text="R$1.000,00" />
 
         <TextView
             android:id="@+id/date"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginEnd="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="18dp"
             android:theme="@style/StatementCard.Date"
             app:layout_constraintBottom_toBottomOf="@+id/title"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
             tools:text="12/12/2018" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
