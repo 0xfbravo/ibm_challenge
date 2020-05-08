@@ -44,6 +44,11 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:$junit_androidx_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
 
+    // Android UI
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefresh_version"
+    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+    implementation "androidx.cardview:cardview:$cardview_version"
+
     // Koin for Android - https://github.com/InsertKoinIO/koin
     implementation "org.koin:koin-android:$koin_version"
 
@@ -74,6 +79,4 @@ dependencies {
 
     // Lottie - https://github.com/airbnb/lottie-android
     implementation "com.airbnb.android:lottie:$lottie_version"
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'androidx.cardview:cardview:1.0.0'
 }

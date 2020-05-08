@@ -4,6 +4,7 @@
     <color name="purple">#FF3B48EE</color>
     <color name="gray">#FFA8B4C4</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="light_gray">#FFFEFEFE</color>
     <color name="darker_gray">#FF485465</color>
 
     <!-- Purple Variations -->

@@ -17,7 +17,7 @@ class StatementPresenter(private val navigator: Navigator,
         getStatements()
     }
 
-    private fun getStatements() {
+    fun getStatements() {
         view?.showLoading()
         try {
             getStatements
@@ -46,7 +46,6 @@ class StatementPresenter(private val navigator: Navigator,
             return
         }
 
-        view?.hideLoading()
         view?.updateStatementList(responseModel.statementList!!)
     }
 

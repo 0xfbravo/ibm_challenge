@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ibm.challenge.statement.presentation.view.StatementActivity">
+    tools:context="com.ibm.challenge.statement.presentation.view.StatementActivity"
+    android:background="@color/light_gray">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/statementHeader"
@@ -101,24 +102,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/statementHeader" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/statementsRecyclerView"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/statementsSwipeRefresh"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/statementsRecyclerView" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <include
         android:id="@+id/loading"
         layout="@layout/loading"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/statementsRecyclerView"
+        android:paddingTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/statementsRecyclerView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/emptyStatements"
+        layout="@layout/empty_statements"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
