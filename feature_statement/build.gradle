@@ -79,4 +79,7 @@ dependencies {
 
     // Lottie - https://github.com/airbnb/lottie-android
     implementation "com.airbnb.android:lottie:$lottie_version"
+
+    // PaperDB - https://github.com/pilgr/Paper
+    implementation "io.paperdb:paperdb:$paperdb_version"
 }

@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import com.ibm.challenge.AppModule
+import io.paperdb.Paper
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.startKoin
@@ -22,6 +23,9 @@ class IBMChallengeApp: Application() {
         /* Set Application Context */
         appContext = applicationContext
         sharedPreferences = appContext.getSharedPreferences("IBMChallengeApp", Context.MODE_PRIVATE)
+
+        /* Setup PaperDB */
+        Paper.init(appContext)
 
         /* Setup Koin */
         startKoin {

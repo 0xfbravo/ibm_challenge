@@ -72,7 +72,7 @@ class LoginPresenter(private val navigator: Navigator,
             return
         }
 
-//        val didCachedSuccessfully = putCacheObject.withParams(response.userAccount!!).execute()
+        val didCachedSuccessfully = putCacheObject.withParams(response.userAccount!!).execute()
         navigateToStatements(responseModel.userAccount!!)
         view?.hideLoading()
     }
