@@ -12,6 +12,7 @@ class GetStatements(private val localRepository: LocalRepository,
 
     private var userId = Long.MIN_VALUE
 
+    @Throws(InvalidUserIdException::class)
     override fun execute(): Single<StatementResponseDomain> {
         if (userId < 0)
             throw InvalidUserIdException("O id de usuário [$userId] é inválido.")

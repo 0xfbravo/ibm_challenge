@@ -2,21 +2,21 @@ package com.ibm.challenge.login.presentation.view
 
 import com.ibm.challenge.core.Navigator
 import com.ibm.challenge.core.mvp.BasePresenter
+import com.ibm.challenge.domain.interactos.cache.GetCacheObject
+import com.ibm.challenge.domain.interactos.cache.PutCacheObject
 import com.ibm.challenge.login.core.PresentationModelMapper
 import com.ibm.challenge.login.domain.exceptions.InvalidLoginException
-import com.ibm.challenge.login.domain.interactors.PostLogin
-import com.ibm.challenge.login.domain.interactors.ValidateCpf
-import com.ibm.challenge.login.domain.interactors.ValidateEmail
-import com.ibm.challenge.login.domain.interactors.ValidatePassword
+import com.ibm.challenge.login.domain.interactors.*
 import com.ibm.challenge.login.domain.model.LoginResponseDomain
-import com.ibm.challenge.login.domain.model.UserAccountDomain
 import com.ibm.challenge.presentation.model.login.UserAccountModel
 
 class LoginPresenter(private val navigator: Navigator,
                      private val validateCpf: ValidateCpf,
                      private val validateEmail: ValidateEmail,
                      private val validatePassword: ValidatePassword,
-                     private val postLogin: PostLogin): BasePresenter<LoginView>() {
+                     private val postLogin: PostLogin,
+                     private val getCacheObject: GetCacheObject,
+                     private val putCacheObject: PutCacheObject): BasePresenter<LoginView>() {
 
     var currentUser: String = ""
     set(value) {
@@ -72,6 +72,7 @@ class LoginPresenter(private val navigator: Navigator,
             return
         }
 
+//        val didCachedSuccessfully = putCacheObject.withParams(response.userAccount!!).execute()
         navigateToStatements(responseModel.userAccount!!)
         view?.hideLoading()
     }

@@ -4,6 +4,8 @@ import com.ibm.challenge.core.IBMChallengeApp
 import com.ibm.challenge.core.Navigator
 import com.ibm.challenge.core.mvp.BaseActivity
 import com.ibm.challenge.data.repository.local.LocalRepositoryImpl
+import com.ibm.challenge.domain.interactos.cache.GetCacheObject
+import com.ibm.challenge.domain.interactos.cache.PutCacheObject
 import com.ibm.challenge.domain.repository.LocalRepository
 import com.ibm.challenge.presentation.view.splashscreen.SplashScreenPresenter
 import io.realm.Realm
@@ -21,13 +23,11 @@ object AppModule {
         }
 
         // Domain
+        single { GetCacheObject(get()) }
+        single { PutCacheObject(get()) }
 
         // Presentation
-        single { (activity: BaseActivity) ->  SplashScreenPresenter(
-            Navigator(
-                activity
-            )
-        ) }
+        single { (activity: BaseActivity) ->  SplashScreenPresenter(Navigator(activity)) }
     }
 
 }

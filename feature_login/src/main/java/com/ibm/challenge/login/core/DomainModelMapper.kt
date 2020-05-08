@@ -15,7 +15,7 @@ object DomainModelMapper {
         return LoginResponseDomain(statementListModel, errorModel)
     }
 
-    private fun mapUserAccount(entity: UserAccountEntity): UserAccountDomain {
+    fun mapUserAccount(entity: UserAccountEntity): UserAccountDomain {
         return UserAccountDomain(entity.userID, entity.name, entity.bankAccount, entity.agency, entity.balance)
     }
 

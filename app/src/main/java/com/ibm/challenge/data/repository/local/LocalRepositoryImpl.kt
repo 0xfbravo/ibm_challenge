@@ -1,7 +1,7 @@
 package com.ibm.challenge.data.repository.local
 
 import com.ibm.challenge.core.model.DomainModel
-import com.ibm.challenge.data.exceptions.ObjectIsntInCacheException
+import com.ibm.challenge.domain.exceptions.ObjectIsNotInCacheException
 import com.ibm.challenge.domain.repository.LocalRepository
 import io.realm.Realm
 import org.joda.time.DateTime
@@ -15,7 +15,7 @@ class LocalRepositoryImpl(private val realm: Realm): LocalRepository {
         }
         catch (e : Exception) {
             e.printStackTrace()
-            throw ObjectIsntInCacheException("Não existe nenhum objeto com a chave [$cacheKey] em cache.")
+            throw ObjectIsNotInCacheException("Não existe nenhum objeto com a chave [$cacheKey] em cache.")
         }
     }
 
@@ -23,8 +23,8 @@ class LocalRepositoryImpl(private val realm: Realm): LocalRepository {
         TODO("Not yet implemented")
     }
 
-    override fun putObject(model: DomainModel, override: Boolean, cacheLimitDate: DateTime): Boolean {
-        model.cacheLimitDate = cacheLimitDate.toDate()
+    override fun putObject(model: DomainModel, cacheLimitDate: DateTime?): Boolean {
+        model.cacheLimitDate = cacheLimitDate?.toDate()
 
         return try {
             realm.beginTransaction()
@@ -37,12 +37,7 @@ class LocalRepositoryImpl(private val realm: Realm): LocalRepository {
         }
     }
 
-    override fun putList(
-        cacheKey: String,
-        modelList: List<DomainModel>,
-        override: Boolean,
-        cacheLimitDate: DateTime
-    ): Boolean {
+    override fun putList(cacheKey: String, modelList: List<DomainModel>, cacheLimitDate: DateTime?): Boolean {
         TODO("Not yet implemented")
     }
 

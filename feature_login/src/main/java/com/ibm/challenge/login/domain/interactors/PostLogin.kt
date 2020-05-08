@@ -7,8 +7,7 @@ import com.ibm.challenge.login.domain.model.LoginResponseDomain
 import com.ibm.challenge.login.domain.repository.LoginRemoteRepository
 import io.reactivex.rxjava3.core.Single
 
-class PostLogin(private val localRepository: LocalRepository,
-                private val remoteRepository: LoginRemoteRepository,
+class PostLogin(private val remoteRepository: LoginRemoteRepository,
                 private val validateCpf: ValidateCpf,
                 private val validateEmail: ValidateEmail,
                 private val validatePassword: ValidatePassword): Interactor<Single<LoginResponseDomain>>() {
@@ -16,6 +15,7 @@ class PostLogin(private val localRepository: LocalRepository,
     private var user = ""
     private var password = ""
 
+    @Throws(InvalidLoginException::class)
     override fun execute(): Single<LoginResponseDomain> {
         val cpfValidation = validateCpf.withParams(user).execute()
         val emailValidation = validateEmail.withParams(user).execute()

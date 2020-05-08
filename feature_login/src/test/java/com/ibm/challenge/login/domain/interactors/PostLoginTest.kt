@@ -1,6 +1,5 @@
 package com.ibm.challenge.login.domain.interactors
 
-import com.ibm.challenge.domain.repository.LocalRepository
 import com.ibm.challenge.login.domain.exceptions.InvalidLoginException
 import com.ibm.challenge.login.domain.model.LoginErrorDomain
 import com.ibm.challenge.login.domain.model.LoginResponseDomain
@@ -34,16 +33,13 @@ class PostLoginTest {
         val validateEmail = ValidateEmail()
         val validatePassword = ValidatePassword()
 
-        /* Setup LocalRepository */
-        val localRepository = mock<LocalRepository> {}
-
         /* Setup RemoteRepository */
         val remoteRepository = mock<LoginRemoteRepository> {
             on { postLogin(successCpf, successPassword) } doReturn Single.just(successResponseDomain)
             on { postLogin(errorCpf, errorPassword) } doReturn Single.just(errorResponseDomain)
         }
 
-        postLogin = PostLogin(localRepository, remoteRepository, validateCpf, validateEmail, validatePassword)
+        postLogin = PostLogin(remoteRepository, validateCpf, validateEmail, validatePassword)
     }
 
     @Test
