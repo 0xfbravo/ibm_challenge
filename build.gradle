@@ -3,8 +3,8 @@
 buildscript {
     ext {
         // Version Control
-        version_name = '0.0.0'
-        version_code = 1
+        version_name = '0.0.1'
+        version_code = 2
 
         // App Config
         build_tools_version = '29.0.2'
