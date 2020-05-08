@@ -19,7 +19,7 @@ class GetCacheObject(private val localRepository: LocalRepository): Interactor<D
         if (cacheHelper == null)
             throw InvalidCacheHelperException("O cache helper não pode ser nulo.")
 
-        if (cacheHelper?.key == null)
+        if (cacheHelper?.key.isNullOrEmpty())
             throw InvalidCacheKeyException("A chave de cache não pode ser vazia.")
 
         if (cacheObjectClass == null)

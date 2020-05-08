@@ -18,8 +18,8 @@ class PutCacheObject(private val localRepository: LocalRepository): Interactor<B
         if (cacheHelper == null)
             throw InvalidCacheHelperException("O cache helper não pode ser nulo.")
 
-        if (cacheHelper?.key == null)
-            throw InvalidCacheKeyException("A chave de cache não pode ser vazia.")
+        if (cacheHelper?.key.isNullOrEmpty())
+            throw InvalidCacheKeyException("A chave de cache não pode ser nula ou vazia.")
 
         if (domainModel == null)
             throw InvalidDomainModelException("O modelo não pode ser nulo.")
