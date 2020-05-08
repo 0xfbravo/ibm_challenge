@@ -14,9 +14,10 @@ class Navigator(private val activity: BaseActivity) {
 
     fun navigateToLogin() {
         val intent = Intent()
-        intent.setClassName(BuildConfig.APPLICATION_ID, AppFeature.Login.className)
+        intent.apply {
+            setClassName(BuildConfig.APPLICATION_ID, AppFeature.Login.className)
+        }
         activity.startActivity(intent)
-        activity.finish()
     }
 
     fun navigateToStatement(userAccountModel: UserAccountModel) {
@@ -26,7 +27,6 @@ class Navigator(private val activity: BaseActivity) {
             putExtra(UserAccountModel.bundleKey, userAccountModel)
         }
         activity.startActivity(intent)
-        activity.finish()
     }
 
 }

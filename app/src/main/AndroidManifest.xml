@@ -20,7 +20,8 @@
         <activity
             android:name=".presentation.view.splashscreen.SplashScreenActivity"
             android:screenOrientation="userPortrait"
-            android:theme="@style/AppTheme.NoTitleBar.FullScreen">
+            android:theme="@style/AppTheme.NoTitleBar.FullScreen"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
