@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Wireframe Colors -->
+    <color name="purple">#FF3B48EE</color>
+    <color name="gray">#FFA8B4C4</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="light_gray">#FFFEFEFE</color>
+    <color name="darker_gray">#FF485465</color>
+    <color name="gray_border">#FFDCE2EE</color>
+
+    <!-- Purple Variations -->
+    <color name="purple_25">#403B48EE</color>
+    <color name="purple_75">#BF3B48EE</color>
+
+</resources>

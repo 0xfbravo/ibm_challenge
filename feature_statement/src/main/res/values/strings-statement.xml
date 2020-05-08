@@ -1,0 +1,12 @@
+<resources>
+    <string name="account">Conta</string>
+    <string name="balance">Saldo</string>
+    <string name="recent">Recentes</string>
+
+    <!-- Statement Error -->
+    <string name="empty_statement_title">Hmm… não encontramos lançamentos</string>
+    <string name="try_again">Tentar novamente</string>
+    <string name="statement_error_title">Ocorreu um erro…</string>
+    <string name="generic_statement_error">Não foi possível recuperar seu extrato no momento.</string>
+    <string name="ok">OK</string>
+</resources>

@@ -1,0 +1,4 @@
+rootProject.name='IBM Challenge'
+include ':app'
+include ':feature_statement'
+include ':feature_login'

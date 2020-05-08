@@ -1,0 +1,11 @@
+<resources>
+    <string name="user_edit_text_placeholder">User</string>
+    <string name="password_edit_text_placeholder">Password</string>
+    <string name="login_button_text">Login</string>
+    <string name="welcome_back_text">Olá, %s\n%s / %s</string>
+
+    <!-- Login Error -->
+    <string name="login_error_title">Ocorreu um erro…</string>
+    <string name="generic_login_error">Não foi possível realizar seu login no momento.</string>
+    <string name="ok">OK</string>
+</resources>

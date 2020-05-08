@@ -1,0 +1,87 @@
+apply plugin: 'com.android.dynamic-feature'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion compile_sdk_version
+    buildToolsVersion build_tools_version
+
+    defaultConfig {
+        applicationId "com.ibm.challenge"
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_sdk_version
+        versionCode version_code
+        versionName version_name
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':app')
+
+    // Android
+    api "androidx.appcompat:appcompat:$appcompat_version"
+    api "androidx.core:core-ktx:$core_version"
+    api "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // Tests
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockito_version"
+    testImplementation "com.squareup.okhttp3:mockwebserver:$okhttp_version"
+    androidTestImplementation "androidx.test.ext:junit:$junit_androidx_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    androidTestImplementation "androidx.test:runner:$runner_version"
+    androidTestImplementation "androidx.test:rules:$rules_version"
+
+    // Android UI
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefresh_version"
+    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+    implementation "androidx.cardview:cardview:$cardview_version"
+
+    // Koin for Android - https://github.com/InsertKoinIO/koin
+    implementation "org.koin:koin-android:$koin_version"
+
+    // RxKotlin - https://github.com/ReactiveX/RxKotlin
+    implementation "io.reactivex.rxjava3:rxkotlin:$rx_version"
+
+    // RxAndroid - https://github.com/ReactiveX/RxAndroid
+    implementation "io.reactivex.rxjava3:rxandroid:$rx_version"
+
+    // OkHttp - https://github.com/square/okhttp
+    implementation ("com.squareup.okhttp3:okhttp:$okhttp_version") { force = true }
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
+    // Retrofit - https://github.com/square/retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.github.akarnokd:rxjava3-retrofit-adapter:$rx_java_retrofit_adapter_version"
+
+    // GSON - https://github.com/google/gson
+    implementation "com.google.code.gson:gson:$gson_version"
+
+    // JodaTime - https://github.com/JodaOrg/joda-time
+    implementation "joda-time:joda-time:$joda_time_version"
+
+    // InputMask - https://github.com/RedMadRobot/input-mask-android
+    implementation "com.redmadrobot:input-mask-android:$inputmask_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kt_stdlib_version"
+
+    // Lottie - https://github.com/airbnb/lottie-android
+    implementation "com.airbnb.android:lottie:$lottie_version"
+
+    // PaperDB - https://github.com/pilgr/Paper
+    implementation "io.paperdb:paperdb:$paperdb_version"
+}

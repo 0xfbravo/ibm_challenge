@@ -1,0 +1,73 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext {
+        // Version Control
+        version_name = '0.0.0'
+        version_code = 1
+
+        // App Config
+        build_tools_version = '29.0.2'
+        compile_sdk_version = 29
+        min_sdk_version = 19
+        target_sdk_version = 29
+        gradle_version = '3.6.3'
+
+        // Android Default Dependencies
+        appcompat_version = '1.1.0'
+        core_version = '1.2.0'
+        constraintlayout_version = '1.1.3'
+
+        // Test Dependencies
+        runner_version = '1.2.0'
+        rules_version = '1.2.0'
+        junit_version = '4.12'
+        mockito_version = '2.2.0'
+        junit_androidx_version = '1.1.1'
+        espresso_version = '3.2.0'
+
+        // Dependencies
+        kotlin_version = '1.3.72'
+        koin_version = '2.1.5'
+        rx_version = '3.0.0'
+        gson_version = '2.8.4'
+        joda_time_version = '2.10'
+        okhttp_version = '3.12.11'
+        retrofit_version = '2.6.0'
+        rx_java_retrofit_adapter_version = '3.0.0'
+        gson_version = '2.8.5'
+        inputmask_version = '6.0.0'
+        kt_stdlib_version = '1.3.72'
+        lottie_version = '3.4.0'
+        swiperefresh_version = '1.0.0'
+        recyclerview_version = '1.1.0'
+        cardview_version = '1.0.0'
+        paperdb_version = '2.6'
+    }
+
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:$gradle_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
