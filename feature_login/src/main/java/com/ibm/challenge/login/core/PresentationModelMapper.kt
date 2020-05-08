@@ -15,7 +15,7 @@ object PresentationModelMapper {
         return LoginResponseModel(statementListModel, errorModel)
     }
 
-    private fun mapUserAccount(entity: UserAccountDomain): UserAccountModel {
+    fun mapUserAccount(entity: UserAccountDomain): UserAccountModel {
         return UserAccountModel(entity.userID, entity.name, entity.bankAccount, entity.agency, entity.balance)
     }
 

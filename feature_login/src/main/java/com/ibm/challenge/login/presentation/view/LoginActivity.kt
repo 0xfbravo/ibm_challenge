@@ -2,6 +2,7 @@ package com.ibm.challenge.login.presentation.view
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.view.View
 import androidx.core.widget.doOnTextChanged
 import com.ibm.challenge.app.login.R
 import com.ibm.challenge.core.Maskify
@@ -18,6 +19,11 @@ class LoginActivity : BaseActivity(), LoginView {
     private fun inject() = loadFeatureModule
 
     private val presenter: LoginPresenter by inject { parametersOf(this) }
+
+    override fun onResume() {
+        super.onResume()
+        presenter.retrieveUserAccount()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         inject()
@@ -39,6 +45,15 @@ class LoginActivity : BaseActivity(), LoginView {
         loginButton.setOnClickListener {
             presenter.handleLoginButtonClick()
         }
+    }
+
+    override fun showWelcomeBack() {
+        welcomeBack.text = getString(R.string.welcome_back_text, presenter.cachedUserAccountModel?.name, presenter.cachedUserAccountModel?.bankAccount, presenter.cachedUserAccountModel?.agency )
+        welcomeBack.visibility = View.VISIBLE
+    }
+
+    override fun hideWelcomeBack() {
+        welcomeBack.visibility = View.GONE
     }
 
     override fun maskUserCpf() = runOnUiThread {

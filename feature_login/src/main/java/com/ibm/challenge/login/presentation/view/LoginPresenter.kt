@@ -39,6 +39,12 @@ class LoginPresenter(private val navigator: Navigator,
         view?.changeLoginButtonState(isLoginButtonEnabled())
     }
 
+    var cachedUserAccountModel: UserAccountModel? = null
+    set(value) {
+        field = value
+        view?.showWelcomeBack()
+    }
+
     fun handleLoginButtonClick() {
         view?.showLoading()
         try {
@@ -51,6 +57,17 @@ class LoginPresenter(private val navigator: Navigator,
             e.printStackTrace()
             view?.hideLoading()
             view?.showLoginError()
+        }
+    }
+
+    fun retrieveUserAccount() {
+        try {
+            val userAccountDomain = getCacheObject.withParams(CacheHelper.UserAccount, UserAccountDomain::class.java).execute() as UserAccountDomain
+            cachedUserAccountModel = PresentationModelMapper.mapUserAccount(userAccountDomain)
+        }
+        catch (e : Exception) {
+            e.printStackTrace()
+            view?.hideWelcomeBack()
         }
     }
 
@@ -74,8 +91,7 @@ class LoginPresenter(private val navigator: Navigator,
             return
         }
 
-        val t = putCacheObject.withParams(CacheHelper.UserAccount, response.userAccount!!).execute()
-        val c = getCacheObject.withParams(CacheHelper.UserAccount, UserAccountDomain::class.java).execute()
+        putCacheObject.withParams(CacheHelper.UserAccount, response.userAccount!!).execute()
         navigateToStatements(responseModel.userAccount!!)
         view?.hideLoading()
     }
