@@ -1,8 +1,7 @@
 package com.ibm.challenge.core.model
 
-import java.util.*
+import org.joda.time.DateTime
 
-open class DomainModel {
-    open var baseCacheKey: String? = null
-    open var cacheLimitDate: Date? = null
+abstract class DomainModel {
+    var cachedAt: DateTime? = null
 }

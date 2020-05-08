@@ -2,6 +2,7 @@ package com.ibm.challenge.login.presentation.view
 
 import com.ibm.challenge.core.Navigator
 import com.ibm.challenge.core.mvp.BasePresenter
+import com.ibm.challenge.domain.core.CacheHelper
 import com.ibm.challenge.domain.interactos.cache.GetCacheObject
 import com.ibm.challenge.domain.interactos.cache.PutCacheObject
 import com.ibm.challenge.login.core.PresentationModelMapper
@@ -72,7 +73,7 @@ class LoginPresenter(private val navigator: Navigator,
             return
         }
 
-        val didCachedSuccessfully = putCacheObject.withParams(response.userAccount!!).execute()
+        putCacheObject.withParams(CacheHelper.UserAccount, response.userAccount!!).execute()
         navigateToStatements(responseModel.userAccount!!)
         view?.hideLoading()
     }
